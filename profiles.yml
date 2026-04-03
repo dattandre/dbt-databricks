@@ -2,8 +2,8 @@ dbt_databricks:
   outputs:
     dev:
       catalog: dbt_project_catalog
-      host: adb-7405609580792979.19.azuredatabricks.net
-      http_path: /sql/1.0/warehouses/1db599f04ba55533
+      host: "{{ env_var('DATABRICKS_HOST') }}"
+      http_path: "{{ env_var('DATABRICKS_HTTP_PATH') }}"
       schema: default
       threads: 1
       token: "{{ env_var('DATABRICKS_TOKEN') }}"
